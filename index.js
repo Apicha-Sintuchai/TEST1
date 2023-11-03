@@ -17,8 +17,9 @@ app.use('/savepic', express.static('savepic'))
 
 app.get('/some' , async(req,res) => {
    
-    const GetData = await table.find({}).exec()
-    res.send(GetData)
+    // const GetData = await table.find({}).exec()
+    // res.send(GetData)
+    res.send('some')
 })
 
 app.post('/gay',upload, async(req,res) => {
