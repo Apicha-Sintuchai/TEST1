@@ -32,7 +32,7 @@ app.post('/gay',upload, async(req,res) => {
 })
 app.delete('/gay/:id' ,async(req,res) => {
     const id = req.params.id
-    const removed = await BookShema.findOneAndDelete({_id:id}).exec()
+    const removed = await table.findOneAndDelete({_id:id}).exec()
     if(removed?.file){
         await fs.unlink('./Picsave/' + removed.file,(err) => {
             if(err)
